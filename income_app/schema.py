@@ -8,10 +8,9 @@ class TypeIncomeBase(BaseModel):
 
 
 class IncomeBase(BaseModel):
-    id: int
-    income: int
-    type: int
-    created_at = datetime
-    edited_at = datetime
-    user_id = int
+    user_id: int
+    income_type_id: int
+    income: float
+
+    
     
