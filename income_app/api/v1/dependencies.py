@@ -27,7 +27,15 @@ def get_type_income_service():
 
 
 income_repository = None
-credentials = Annotated[HTTPAuthorizationCredentials, Depends(HTTPBearer())]
-user_dependency = Annotated[dict, Depends(get_current_user)]
-income_service = Annotated[IncomeService, Depends(get_income_service)]
-type_income_service = Annotated[IncomeService, Depends(get_type_income_service)]
+
+credentials = Annotated[HTTPAuthorizationCredentials,
+                        Depends(HTTPBearer())]
+
+user_dependency = Annotated[dict,
+                            Depends(get_current_user)]
+
+income_service = Annotated[IncomeService,
+                           Depends(get_income_service)]
+
+type_income_service = Annotated[IncomeService,
+                                Depends(get_type_income_service)]

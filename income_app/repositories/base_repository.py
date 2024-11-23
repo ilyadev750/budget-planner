@@ -10,4 +10,3 @@ class ModelRepository(ABC):
     @abstractmethod
     def get_user_incomes():
         raise NotImplementedError
-

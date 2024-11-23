@@ -1,8 +1,8 @@
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import FastAPI
 import uvicorn
 from api.v1.routes import routers as income_router
 from models.incomes import Base
-from db.database import SessionLocal, engine
+from db.database import engine
 
 
 Base.metadata.create_all(bind=engine)

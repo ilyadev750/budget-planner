@@ -1,14 +1,10 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter
 from starlette import status
-from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from api.v1.dependencies import user_dependency
 from datetime import datetime
-from schemas.incomes import IncomeBase, TypeIncomeBase, UserIncomeBase
-from models.incomes import Income, TypeIncome
-from typing import Annotated
+from schemas.incomes import IncomeBase, TypeIncomeBase
 from api.v1.dependencies import income_service, type_income_service
-from repositories.incomes import IncomeRepository
-from api.v1.dependencies import income_repository, credentials
+from api.v1.dependencies import credentials
 
 
 router = APIRouter(prefix='/incomes', tags=['Работа с доходами'])
@@ -47,4 +43,3 @@ async def create_income_type(credentials: credentials,
     type_income_dict = TypeIncomeRequest.model_dump()
     result = await type_income_service.create(type_income_dict)
     return result
-

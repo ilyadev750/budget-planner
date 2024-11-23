@@ -1,9 +1,3 @@
-from repositories.incomes import IncomeRepository
-from models.incomes import TypeIncome, Income
-from repositories.base_repository import ModelRepository
-from db.database import SessionLocal
-
-
 class IncomeService:
 
     def __init__(self,

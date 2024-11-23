@@ -1,4 +1,9 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, DateTime, Float
+from sqlalchemy import (Column,
+                        ForeignKey,
+                        Integer,
+                        String,
+                        DateTime,
+                        Float)
 from sqlalchemy.orm import relationship
 import datetime
 from db.database import Base
@@ -17,7 +22,8 @@ class Income(Base):
     user_id = Column(Integer)
     income_type_id = Column(Integer, ForeignKey("income_types.id"))
     income = Column(Float)
-    created_at = Column(DateTime(timezone=True), default=datetime.datetime.now())
-    edited_at = Column(DateTime(timezone=True), default=datetime.datetime.now())
+    created_at = Column(DateTime(timezone=True),
+                        default=datetime.datetime.now())
+    edited_at = Column(DateTime(timezone=True),
+                       default=datetime.datetime.now())
     type_income = relationship("TypeIncome", back_populates="incomes")
-
