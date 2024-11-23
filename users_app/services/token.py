@@ -9,7 +9,7 @@ load_dotenv()
 
 
 class TokenService(TokenRepository):
-    expires_time = timedelta(minutes=30)
+    expires_time = timedelta(minutes=90)
     secret_key = os.environ.get('SECRET_KEY')
     algorithm = os.environ.get('ALGORITHM')
 

@@ -1,7 +1,7 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, DateTime, Float
 from sqlalchemy.orm import relationship
 import datetime
-from database import Base
+from db.database import Base
 
 
 class TypeIncome(Base):
@@ -20,3 +20,4 @@ class Income(Base):
     created_at = Column(DateTime(timezone=True), default=datetime.datetime.now())
     edited_at = Column(DateTime(timezone=True), default=datetime.datetime.now())
     type_income = relationship("TypeIncome", back_populates="incomes")
+

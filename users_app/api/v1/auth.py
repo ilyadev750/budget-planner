@@ -16,7 +16,7 @@ base_prefix = os.environ.get('API_V1_STR')
 router = APIRouter(prefix=f'{base_prefix}/auth', tags=['Пользователи'])
 
 
-@router.post("/")
+@router.post("/create-user")
 async def create_user(create_user_request: CreateUserBase):
     create_user_dict = create_user_request.model_dump()
     await UserRepository().create_user(data=create_user_dict)
